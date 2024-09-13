@@ -1,0 +1,94 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#game-container {
+    display: flex;
+}
+
+#glcanvas {
+    width: calc(100vw - 200px); /* Reserve space for the sidebar */
+    height: 100vh;
+    display: none; /* Hide canvas until game starts */
+}
+
+#sidebar {
+    width: 200px;
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#sidebar h2 {
+    margin: 20px 0;
+    font-size: 1.5em;
+}
+
+/* Loading Screen */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+}
+
+/* Start Screen */
+#start-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    color: #fff;
+    display: none; /* Hide until loading is complete */
+    align-items: center;
+    justify-content: center;
+}
+
+#start-button {
+    padding: 20px 40px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* Game Over Screen */
+#game-over-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    display: none; /* Hide until game over */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-over-screen h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+#game-over-screen p {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+#restart-button {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
