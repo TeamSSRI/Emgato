@@ -6,7 +6,7 @@
 
 ## :rocket: **Starting the Node.js Environment**
 
-## :file_cabinet: **Ensuring MongoDB is Running**
+### :file_cabinet: **Ensuring MongoDB is Running**
 
 - **Check MongoDB Status**: *** sudo systemctl status mongod***
 - If MongoDB is not running, start it with:
