@@ -1,0 +1,55 @@
+== Cascade Mountain Style Sheet ==
+(Rainier is a mountain in the Cascade mountain range, so. pun)
+
+Terms and Defintions: 
+- Pixel: As used here, a pixel p refers to a space that the player can see. 
+  + Because we're using pixel art, this is going to be drastically different than a pixel on a computer/phone screen.
+  + The converstion rate is 1:TBD
+- Color palette: The limited range of colors used in a specific piece. I anticipate different color palettes across different levels.
+  + Colors will be written in hex format (eg. #A0CDEF) for consistancy and because they translate well to web and digital art. 
+  + https://www.colorhexa.com/ is a good website to check colors and readibility. 
+  + https://coolors.co/ is a good website for generating color palettes.
+- Layer: A scene will have different layers, generally seperated into:
+  + Background: Either a solid color or gradient, usually representing the sky. Static across the level.
+  + Midground: Things that move, but slowly. Can be multiple layers, eg. clouds, mountains, forest, etc.
+  + Foreground: Where the important things happen. This is where the cat, the tokens/trinkets/etc are, and where the meaningful ground is.
+  + Ideally, we won't just have layers per scene, but if that's what time allows then that's what time allows. A scene could have:
+    = (B)  Background:  a blue/green gradient sky
+    = (M1) Midground 1: a layer of clouds
+    = (M2) Midground 2: a far layer of mountains
+    = (M3) Midground 3: a slightly closer layer of mountains
+    = (M4) Midground 4: a layer of trees in a forest
+    = (M5) Midground 5: a slightly closer layer of trees in a forest
+    = (F)  Foreground:  cat, etc
+  + In a sort of layered enviroment, you can use different movement speeds to get a parallax effect that implies depth. Example:
+    = (B)  stays constant as the player moves around the screen
+    = (M1) moves at a contast pace; it's implied that it's far enough away that it's not affected by player movement
+    = (M2) moves at 2p for every 10p of character movement
+    = (M3) moves at 3p for every 10p of character movement 
+    = (M4) moves at 5p for every 10p of character movement
+    = (M5) moves at 6p for every 10p of character movement
+    = (F)  moves directly with the character movement
+    = This is probably an extreme example; I'll have to play around with the numbers to find something reasonable.
+  + Aside from edge cases (the player is literally against the edge of the level), the camera follows the character.
+- Scene: What you can see at one point on the screen.
+- Level: I'm sure I can come up with a definition, but c'mon. It's a level.
+- I'm sure I'll have more pedantic notes that come up later.
+
+PIXEL MATH:
+- The average cat is apartently 18in long and 10in tall. 
+- Per the rule of cute (and laziness), I will make the cat 16 in long and 11in tall (including an inch for just ears)
+  + In walking position.
+- Cats can jump up to 6 times their height, but that feels a little insane unless we want to commit to a really vertical platform game, which could actually be kind of fun now that I think about it. 
+- I think a happy medium is 3-3.5 times the height, which means max height is ~35 pixels above base height
+  + While that should probably be measured by the center of gravity, I'll figure that out more when I do the jumping animation.
+- You should be able to see 2 cats under you and 2 cats above the top of where you land.
+- Math:
+  + 2(11) below the cat
+  + 11 for the cat
+  + 35 for the jump
+  + 2(11) for space above the jump
+  = 90 px for height
+  = Let's say 135 for the width?
+- Will add grid, for scale
+
+

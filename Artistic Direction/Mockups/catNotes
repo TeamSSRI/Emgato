@@ -1,0 +1,3 @@
+This is absolutely not the final design for the cat; I just wanted to get a size down. I think 16x16 should be enough for all the sprite animations, and will use this to do math to determine the size of the screens and the maps.
+I also know that this is not transparent. Again, just to get the idea for the math.
+Color(s?) of the cat TBD.
