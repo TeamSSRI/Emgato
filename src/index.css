@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+/*
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -6,8 +10,160 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+*/
+
+html, body {
+  height: 100%; /* Full height for the viewport */
+  margin: 0; /* No margins */
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-family: Arial, sans-serif; /* Clean font */
+  background-color: #f7f7f7; /* Light background color */
+  flex-direction: column; /* Flexbox column to stack vertically */
+}
+
+
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.register-page-container {
+  z-index: 1;
+}
+
+.register-content {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.register-form {
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  min-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-form > div + div {
+  margin-top: 0.5rem;
+}
+
+.label {
+  display: inline-block;
+  width: 90px;
+}
+
+.logo-row {
+  padding-bottom: 1rem;
+}
+
+.logo-img {
+  width: 100px;
+  object-fit: contain;
+}
+
+.vp-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: url('client/images/utdbackground.png');
+  z-index: -1;
+  /* opacity: 0.5; */
+}
+
+
+/* Login page container */
+.login-page {
+  background-color: transparent; /* White background for the form */
+  padding: 30px; /* Padding around the content */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 400px; /* Fixed width for the form */
+  max-width: 90%; /* Responsive max width */
+  display: flex; /* Flexbox to center contents */
+  flex-direction: column; /* Vertical stack of elements */
+  align-items: center; /* Center contents horizontally */
+}
+
+/* Logo styling */
+.logo {
+  max-width: 150px; /* Control the size of the logo */
+  height: auto; /* Keep the aspect ratio */
+  margin-bottom: 20px; /* Space between the logo and the form */
+}
+
+/* Styles for the form */
+.login-form {
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack items vertically */
+  width: 100%; /* Ensure the form takes full width */
+}
+
+/* Styles for form elements */
+.login-form label {
+  margin-bottom: 5px; /* Space below labels */
+  font-weight: bold; /* Make labels bold */
+  align-self: flex-start; /* Align labels to the left */
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  padding: 10px; /* Padding inside inputs */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Slightly rounded inputs */
+  margin-bottom: 15px; /* Space below inputs */
+  width: 100%; /* Full width for inputs */
+}
+
+/* Styles for button group */
+.button-group {
+  display: flex; /* Use flexbox for buttons */
+  justify-content: space-between; /* Space buttons to edges */
+  width: 100%; /* Full width for the button group */
+}
+
+/* Styles for buttons */
+.button {
+  padding: 10px 15px; /* Padding for buttons */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor for buttons */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded buttons */
+  transition: background-color 0.3s; /* Smooth transition */
+  width: 48%; /* Ensure buttons take equal width */
+}
+
+.register-button {
+  background-color: #4CAF50; /* Green background for register */
+  color: white; /* White text */
+}
+
+.register-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.login-button {
+  background-color: #008CBA; /* Blue background for login */
+  color: white; /* White text */
+}
+
+.login-button:hover {
+  background-color: #007bb5; /* Darker blue on hover */
+}
+a {
+  text-decoration: none; /* Remove underline */
 }
