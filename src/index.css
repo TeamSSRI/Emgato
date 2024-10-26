@@ -13,16 +13,14 @@ body {
 */
 
 html, body {
-  height: 100%; /* Full height for the viewport */
-  margin: 0; /* No margins */
-  display: flex; /* Use flexbox */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  font-family: Arial, sans-serif; /* Clean font */
-  background-color: #f7f7f7; /* Light background color */
-  flex-direction: column; /* Flexbox column to stack vertically */
+  /* No background color here */
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
 }
-
 
 
 
@@ -167,3 +165,4 @@ code {
 a {
   text-decoration: none; /* Remove underline */
 }
+

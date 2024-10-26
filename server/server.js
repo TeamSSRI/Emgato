@@ -1,24 +1,27 @@
 // /backend/server.js
 const express = require('express');
 const dotenv = require('dotenv');
+const path = require('path')
 const mongoose = require('mongoose');
 const helmet = require('helmet');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
 const mongoSanitize = require('express-mongo-sanitize');
+const bodyParser = require('body-parser');
 
-dotenv.config();
+dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 // Middleware to parse JSON bodies
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Security Middlewares
 app.use(helmet()); // Protects against well-known vulnerabilities by setting HTTP headers
 app.use(mongoSanitize()); // Prevent NoSQL injection
-app.use(cors({ origin: 'http://localhost:5000', credentials: true })); // Restricting CORS for frontend server
+app.use(cors({ origin: 'http://localhost:8080', credentials: true })); // Restricting CORS for frontend server
 app.use(rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
     max: 100, // limit each IP to 100 requests per windowMs
@@ -28,6 +31,14 @@ app.use(rateLimit({
 // Basic route for testing
 app.get('/', (req, res) => {
     res.send('Server is running securely');
+});
+
+app.post('/register', (req, res) => {
+    // to-do: save user onto DB
+    const userSignupInfo = req.body;
+    console.log(userSignupInfo);
+    // redirect UI
+    res.redirect('http://localhost:3000/login');
 });
 
 // Connect to MongoDB
