@@ -33,20 +33,38 @@ app.get('/', (req, res) => {
     res.send('Server is running securely');
 });
 
-app.post('/register', (req, res) => {
+app.post('/register', async (req, res) => {
     // to-do: save user onto DB
     const userSignupInfo = req.body;
     console.log(userSignupInfo);
+    const username = userSignupInfo.username;
+    const pw = userSignupInfo.password;
+
+    if(!username || !pw) {
+        res.status(400).send();
+        return;
+    }
+
+    const userInfo = {
+        username,
+        password: pw
+    };
+    const result = await db.collection('user').insertOne(userInfo);
+    // res.status(200).json(result);
     // redirect UI
     res.redirect('http://localhost:3000/login');
 });
+
+let db = null;
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-}).then(() => console.log('MongoDB connected'))
-    .catch((err) => console.error('MongoDB connection error:', err));
+}).then(() => {
+    console.log('MongoDB connected');
+    db = mongoose.connection;
+}).catch((err) => console.error('MongoDB connection error:', err));
 
 // Start the server
 app.listen(PORT, () => {

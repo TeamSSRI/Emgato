@@ -14,6 +14,7 @@ const LoginPage = () => {
 
         // You can add your login logic here, such as making an API request
         console.log('Login attempt:', { username, password });
+        fetch()
     };
     
     return (
